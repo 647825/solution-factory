@@ -55,6 +55,7 @@ Dit project is een discussieplatform waar gebruikers kunnen discussiëren over v
 3. **Configureer de back-end:**
 
 Open appsettings.json en stel je database-verbinding in:
+    ```bash  
     {
     "ConnectionStrings": {
         "DefaultConnection": "Data Source=DiscussionPlatform.db"
