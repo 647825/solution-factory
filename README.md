@@ -53,9 +53,8 @@ Dit project is een discussieplatform waar gebruikers kunnen discussiëren over v
     cd DiscussionPlatform_frontend
     npm install
 3. **Configureer de back-end:**
-
-Open appsettings.json en stel je database-verbinding in:
     ```bash  
+    Open appsettings.json en stel je database-verbinding in:
     {
     "ConnectionStrings": {
         "DefaultConnection": "Data Source=DiscussionPlatform.db"
