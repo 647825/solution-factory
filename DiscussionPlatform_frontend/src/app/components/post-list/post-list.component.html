@@ -1,0 +1,8 @@
+<cdk-virtual-scroll-viewport itemSize="50" (scrolledIndexChange)="onScroll()">
+    <div *cdkVirtualFor="let post of posts" class="post">
+      <h3><a [routerLink]="['/post', post.id]">{{ post.title }}</a></h3>
+      <p>By {{ post.author }} on {{ post.createdAt | date }}</p>
+      <p>Comments: {{ post.comments.length }}</p>
+    </div>
+  </cdk-virtual-scroll-viewport>
+  

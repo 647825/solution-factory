@@ -1,0 +1,54 @@
+/* Stijl de navigatiebalk */
+nav {
+    background-color: #333; /* Donkere achtergrondkleur */
+    padding: 16px; /* Ruimte binnenin de navigatiebalk */
+    display: flex; /* Flexbox voor horizontale uitlijning */
+    justify-content: center; /* Center de inhoud horizontaal */
+    gap: 20px; /* Ruimte tussen de links */
+  }
+  
+  /* Stijl de links in de navigatiebalk */
+  nav a {
+    color: #fff; /* Witte tekstkleur */
+    text-decoration: none; /* Geen onderstreping */
+    font-size: 1.2rem; /* Grotere lettergrootte */
+    transition: color 0.3s ease; /* Kleurverandering bij hover */
+  }
+  
+  /* Hover-effect voor de links */
+  nav a:hover {
+    color: #007bff; /* Blauwe kleur bij hover */
+  }
+  
+  /* Actieve link stijl */
+  nav a.active {
+    border-bottom: 2px solid #007bff; /* Blauwe onderstreping voor actieve link */
+  }
+  
+  /* Stijl de router-outlet container */
+  router-outlet {
+    display: block;
+    margin: 20px auto; /* Automatische marge om de inhoud in het midden te centreren */
+    max-width: 1200px; /* Max breedte van de inhoud */
+    padding: 0 16px; /* Ruimte aan de zijkanten */
+  }
+  /* Stijl de homepagina */
+.home-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .home-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .home-container p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  

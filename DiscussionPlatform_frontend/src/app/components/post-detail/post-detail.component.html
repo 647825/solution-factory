@@ -1,0 +1,29 @@
+<div *ngIf="post" class="post-detail-container">
+  <h2>{{ post.title }}</h2>
+  <p class="post-meta">By {{ post.author }} on {{ post.createdAt | date }}</p>
+  <p class="post-content">{{ post.content }}</p>
+  <h3>Comments</h3>
+  <app-create-comment [postId]="post.id"></app-create-comment>
+  <div *ngFor="let comment of comments" class="comment">
+    <p class="comment-author">{{ comment.author }}:</p>
+    <p class="comment-text">{{ comment.text }} <span class="comment-date">({{ comment.createdAt | date }})</span></p>
+    <button (click)="startReply(comment.id)">Reply</button>
+    <div *ngFor="let reply of comment.replies" class="reply">
+      <p class="reply-author">-- {{ reply.author }}:</p>
+      <p class="reply-text">{{ reply.text }} <span class="reply-date">({{ reply.createdAt | date }})</span></p>
+    </div>
+    <div *ngIf="replyParentId === comment.id" class="reply-form">
+      <div *ngIf="message" class="message" [ngClass]="{ error: message === 'All fields are required' || message.startsWith('Error') }">{{ message }}</div> 
+      <form (ngSubmit)="submitReply()">
+        <label for="replyAuthor">Author:</label>
+        <input id="replyAuthor" [(ngModel)]="replyComment.author" name="author" required>
+    
+        <label for="replyText">Reply:</label>
+        <textarea id="replyText" [(ngModel)]="replyComment.text" name="text" required></textarea>
+    
+        <button type="submit">Submit Reply</button>
+        <button type="button" (click)="cancelReply()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
